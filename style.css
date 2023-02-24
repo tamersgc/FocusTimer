@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    display: grid;
+    min-height: 100vh;
+
+
+}
+
+main {
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    gap: 192px
+}
+
+
+span {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 126.166px;
+    line-height: 148px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #323238;
+}
+
+.timer {
+    margin: auto;
+
+}
+
+.controls {
+    margin-top: 40px;
+    display: flex;
+    gap: 40px;
+
+}
+
+.sounds {
+
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 32px;
+    row-gap: 32px;
+
+
+}
+
+.cards {
+    width: 138px;
+    height: 152px;
+
+
+    background: #E1E1E6;
+    border-radius: 24px;
+
+}
+
+.controls button:hover svg path{
+    fill: #02799D;
+
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.sounds .select {
+    background: #02799D;
+    
+}
+
+.sounds .select svg path {
+    fill: #FFFFFF;
+}
