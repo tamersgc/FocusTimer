@@ -9,11 +9,21 @@ const btnStop = document.querySelector(".stop")
 const btnIncrement = document.querySelector(".increment")
 const btnDecrement = document.querySelector(".decrement")
 
+const btnLight = document.querySelector(".light")
+const btnDark = document.querySelector(".dark")
+const root = document.querySelector(':root');
+
 const soundFlorest = new Audio("./sounds/Floresta.wav")
 const soundRain = new Audio("./sounds/Chuva.wav")
 const soundCoffee = new Audio("./sounds/Cafeteria.wav")
 const soundFire = new Audio("./sounds/Lareira.wav")
 const kitchenTimer = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/kichen-timer.mp3?raw=true")
+
+
+soundRain.loop = true
+soundFlorest.loop = true
+soundCoffee.loop = true
+soundFire.loop = true
 
 let minutesDisplay = document.querySelector("#minutes")
 let secondsDisplay = document.querySelector("#seconds")
@@ -60,6 +70,33 @@ function playSound(sound) {
 
 }
 
+
+
+
+btnLight.addEventListener('click', () => {
+    btnDark.classList.toggle('hide')
+    btnLight.classList.toggle('hide')
+
+    document.documentElement.style.setProperty('--light', 'white');
+    document.documentElement.style.setProperty('--bg-light', '#121214');
+    document.documentElement.style.setProperty('--cards', '#29292E');
+    document.documentElement.style.setProperty('--select', '#0A3442');
+    
+    
+    
+    
+})
+
+btnDark.addEventListener('click', () => {
+    btnDark.classList.toggle('hide')
+    btnLight.classList.toggle('hide')
+    
+    document.documentElement.style.setProperty('--light', '#323238');
+    document.documentElement.style.setProperty('--bg-light', 'white');
+    document.documentElement.style.setProperty('--cards', '#E1E1E6');
+    document.documentElement.style.setProperty('--select', '#02799D');
+    
+})
 
 function handleClick(button) {
     if (selected == null) {
@@ -115,7 +152,7 @@ btnDecrement.addEventListener('click', () => {
     minutes = minutesDisplay.textContent
     if (minutes > 0)
         updateDisplay(--minutes, 0)
-    
+
 })
 
 btnPlay.addEventListener('click', () => {

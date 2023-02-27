@@ -4,19 +4,34 @@
     box-sizing: border-box;
 }
 
-
-body {
-    display: grid;
-    min-height: 100vh;
-
-
+:root{
+    --light: #323238;
+    --bg-light: white;
+    --cards: #E1E1E6;
+    --select: #02799D;
 }
 
+
+body {
+
+    background: var(--bg-light);
+
+    display: grid;
+    min-height: 100vh;
+    justify-content: center;
+    align-content: center;
+}
+
+
+
 main {
+  
+
     align-self: center;
     justify-self: center;
     display: flex;
     gap: 192px
+
 }
 
 
@@ -27,7 +42,7 @@ span {
     line-height: 148px;
     text-align: center;
     text-transform: uppercase;
-    color: #323238;
+    color: var(--light);
 }
 
 .timer {
@@ -58,10 +73,21 @@ span {
     height: 152px;
 
 
-    background: #E1E1E6;
+    background: var(--cards);
     border-radius: 24px;
 
 }
+
+.controls button svg path{
+    fill:var(--light);
+
+}
+
+.sounds svg path {
+    fill:var(--light);
+
+}
+
 
 .controls button:hover svg path{
     fill: #02799D;
@@ -75,10 +101,20 @@ button {
 }
 
 .sounds .select {
-    background: #02799D;
+    background: var(--select);
     
 }
 
 .sounds .select svg path {
     fill: #FFFFFF;
+}
+
+
+.theme{
+    justify-self: end;
+    margin-bottom: 92px;
+}
+
+.hide{
+    display: none;
 }
